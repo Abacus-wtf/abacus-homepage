@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import Link from "gatsby-link"
 import { ChevronsLeft, AlignJustify } from "react-feather"
 import { Row } from "shards-react"
 import Button, { ButtonsWhite } from "../Button"
+import Link from "gatsby-link"
 
 const RowStyled = styled(Row)`
   margin: 0;
@@ -70,10 +70,14 @@ const Navbar = () => {
         <Logo to="/">Abacus</Logo>
         <DashedLine />
         <CategoryList>
-          <CategoryLink as={Link} to="/">
+          <CategoryLink as={"a"} href="https://app.abacus.wtf">
             Launch App
           </CategoryLink>
-          <SecondaryCategoryLink as={Link} to="/">
+          <SecondaryCategoryLink
+            target={"_blank"}
+            as={"a"}
+            href="/Abacus_White_Paper.pdf"
+          >
             Whitepaper
           </SecondaryCategoryLink>
         </CategoryList>

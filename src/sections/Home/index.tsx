@@ -167,8 +167,8 @@ const Home: React.FC = () => {
           <LaunchButtonContainer>
             <Button
               data-tip={"Launch App"}
-              as={Link}
-              to="/"
+              as={"a"}
+              href="https://app.abacus.wtf"
               style={{
                 borderRadius: "50%",
                 height: 65,
