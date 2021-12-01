@@ -1,19 +1,23 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import Link from 'gatsby-link'
-import { ChevronsLeft, AlignJustify } from "react-feather";
-import {Row} from 'shards-react'
-import Button, {ButtonsWhite} from '../Button'
+import React, { useState } from "react"
+import styled from "styled-components"
+import Link from "gatsby-link"
+import { ChevronsLeft, AlignJustify } from "react-feather"
+import { Row } from "shards-react"
+import Button, { ButtonsWhite } from "../Button"
 
 const RowStyled = styled(Row)`
+  margin: 0;
   padding: 0px;
   transition: 0.3s;
+  @media ${({ theme }) => theme.media.phone} {
+    margin: unset;
+  }
 `
 
 const Logo = styled(Link)`
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 500;
-  color: ${({theme}) => theme.colors.text1};
+  color: ${({ theme }) => theme.colors.text1};
 `
 
 const CategoryList = styled.div`
@@ -36,27 +40,34 @@ const SecondaryCategoryLink = styled(ButtonsWhite)`
 `
 
 const NavbarContainer = styled.div`
-  height: 60px;
   display: flex;
-  grid-gap: 30px;
-  padding: 24px;
+  padding: 0;
   align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 15px;
+  @media ${({ theme }) => theme.media.phone} {
+    grid-gap: 30px;
+    justify-content: flex-start;
+    height: 60px;
+    padding: 24px;
+    flex-direction: row;
+  }
 `
 
 const DashedLine = styled.div`
   height: 1px;
   padding: 0px 30px;
   width: 250px;
-  background-color: ${({theme}) => theme.colors.text2};
+  background-color: ${({ theme }) => theme.colors.text2};
 `
 
 const Navbar = () => {
   return (
     <RowStyled>
       <NavbarContainer>
-        <Logo to="/">
-          Abacus
-        </Logo>
+        <Logo to="/">Abacus</Logo>
         <DashedLine />
         <CategoryList>
           <CategoryLink as={Link} to="/">
