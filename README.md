@@ -1,4 +1,4 @@
-# Abacus Homepage
+# (Deprecated) Abacus Homepage
 
 ## Get Started
 
